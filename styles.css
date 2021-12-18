@@ -1,0 +1,148 @@
+:root {
+  --dark-blue: hsl(238, 29%, 16%);
+  --red: hsl(14, 88%, 65%);
+  --darkest-greyish-blue: hsl(237, 12%, 33%);
+  --dark-greyish-blue: hsl(240, 6%, 50%);
+  --light-greyish-blue: hsl(240, 5%, 91%);
+  --white: #fff;
+  --gradient: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+
+body {
+  margin: 0;
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+  background: var(--gradient) no-repeat;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+main {
+  margin: 5rem 0 0;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+summary {
+  list-style: none;
+}
+
+.accordion-card {
+  background-color: var(--white);
+  margin: 2rem;
+  padding: 1rem 1.5rem 3rem;
+  border-radius: 1.4rem;
+  max-width: 350px;
+  box-shadow: 0px 10px 30px var(--dark-blue);
+}
+.accordion-card__image {
+  margin: -40% 0 0 10%;
+  max-width: 80%;
+  filter: drop-shadow(-2px 30px 0px #f2f2fd);
+}
+.accordion-card__image-desktop-only {
+  display: none;
+}
+.accordion-card__title {
+  text-align: center;
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: var(--dark-blue);
+}
+.accordion-card__content {
+  margin-top: 3rem;
+}
+.accordion-card__tabs details {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--light-greyish-blue);
+  color: var(--dark-greyish-blue);
+}
+.accordion-card__tabs summary {
+  position: relative;
+  color: var(--darkest-greyish-blue);
+  font-size: clamp(0.8rem, 3vw, 1rem);
+  padding-right: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.accordion-card__tabs summary img {
+  position: absolute;
+  right: 0;
+  top: 7px;
+}
+.accordion-card__tabs summary:hover {
+  cursor: pointer;
+  color: var(--red);
+}
+.accordion-card__tabs details[open] {
+  font-size: clamp(0.7rem, 3vw, 0.9rem);
+  line-height: 1.5rem;
+}
+.accordion-card__tabs details[open] summary {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.accordion-card__tabs details[open] summary img {
+  transform: rotate(180deg);
+}
+
+.attribution {
+  text-align: center;
+  color: var(--white);
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  margin: 1.5rem;
+}
+.attribution a {
+  font-weight: 700;
+  color: var(--red);
+}
+
+@media (min-width: 969px) {
+  main {
+    margin: 0;
+  }
+
+  .accordion-card {
+    display: flex;
+    max-width: 1200px;
+    align-items: center;
+    position: relative;
+    margin: 4rem;
+    padding: 1rem 1.5rem 3rem 0;
+    background-image: url("images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: -550px -290px;
+    filter: drop-shadow(0px 0px -15px var(--dark-blue));
+  }
+  .accordion-card__image-container {
+    overflow: hidden;
+    margin: 0;
+  }
+  .accordion-card__image {
+    margin: 0 2rem 0 -10%;
+    filter: drop-shadow(0 80px 0px #f2f2fd);
+    filter: none;
+    height: auto;
+    max-width: 100%;
+  }
+  .accordion-card__image-desktop-only {
+    display: block;
+    position: absolute;
+    left: -93px;
+    top: 40%;
+  }
+  .accordion-card__title {
+    text-align: left;
+  }
+  .accordion-card__content {
+    margin: 3rem 3rem 1rem 0;
+  }
+  .accordion-card__tabs {
+    width: 400px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
